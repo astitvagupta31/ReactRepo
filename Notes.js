@@ -45,6 +45,7 @@ Note ::    createElement("Tag",{"Attributes to Tags as object"},"(This can be ei
            console.log(heading)   --> It will give the object which contains (props)
            render() : it replaces (React Element)/Javascript Object to html and putting it in the root (DOM) | It is replacing what is existing inside the root <div id="root"></div> 
 
+-------->  React createElement => Object => HTMLElement(render)
 
 --> Code : Creating h1 element inside react and render it on the page
 
@@ -246,6 +247,152 @@ Note : # Parcel  (Bundler)
            - npx parcel index.html (build)
            - It creates a production build 
 
+*/
+
+/*
+
+    ########## Lecture-3 ########## (FOUNDATION / FUNDAMENTAL CONCEPTS) (App.js)
+
+import React from "react";
+import ReactDOM  from "react-dom/client";
+
+React Element 
+
+const heading = React.createElement("h1",{id:"heading"},"Hello Guys, I am Astitva Gupta");
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(heading)
+
+JSX in multiple line then () brackets is needed
+
+
+
+REACT FUNCTIONAL COMPONENT 
+
+const HeadingComponen1 = () => { 
+    return <h1 className="heading">Hello Boys Astitva Is Here</h1>;
+}
+
+const HeadingComponen2 = () => <h1 className="heading">Hello Boys Astitva Is Here</h1>;
+
+Both above Functional components are same
+
+const Title = () =>  (
+        <h1 className="head" tabIndex="5">
+          Hey 
+        </h1>
+  );
+
+
+const HeadingComponent = () => (
+        <div id="container">
+              <Title></Title>
+              <Title />
+          <h1 className="heading">Functional Component</h1>
+        </div>
+);
+
+const title = (
+        <h1 className="head" tabIndex="5">
+        Nameste React  
+      </h1> 
+)
+
+const HeadingComponent1 = () => (
+        <div id="container">
+             {title}
+          <h1 className="heading">Functional Component</h1>
+        </div>
+);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<HeadingComponent />);
+
+
+root.render(jsxHeading);
+console.log(jsxHeading) --> Gives js object
+
+*/
+
+
+
+
+
+
+//        ########## Lecture-3 ########## (FOUNDATION / FUNDAMENTAL CONCEPTS)
+
+/*
+
+        <<<<<<<<<<<<<<< THEORY >>>>>>>>>>>>>>>>>>
+
+Note : -> We can create different type of scripts to build our production ready app.
+       -> Ex : In package.json =>  "scripts": {
+                                       "start": "parcel index.html",
+                                       "build": "parcel build index.html",
+                                       "test": "jest"
+                                     }
+
+       -> npm start = npm run start 
+
+Note : --> create element in React is equivalent to DOM element in html
+       
+## Note ## :: ==> JSX(Java Script Xml) allows us to write HTML in React. JSX makes it easier to write and add HTML in React 
+              ==> JSX is not a HTML in javascript.
+              ==> JSX is a HTML/XML like syntax
+        --> JS engine understand only ECMA script      
+        --> JSX Code is transpiled before it goes to the JS engine and JS engine can receive the code that JS engine understands
+
+        Note : Transpiled --> Code is converted to the code that browsers can understand
+            --> Parcel is transpiled the code by using Babel (JS Library)
+            --> Babel job is to convert JSX to react Code that browsers understand (Compiler/Transpiler => Babel)
+            --> JSX Babel transpiles it to => React.createElement => ReactEl;ement-JS Object => HTML Element(render)
+            --> Attributes in JSX is in camelCasing (Ex -> testData,dataTest)
+            --> JSX in multiple line then () brackets is needed
+            --> Example : const jsxHeading = ( 
+                                   <h1 className="head">
+                                      Nameste React using JSX 
+                                   </h1>);
+
+----> VS CODE Extensions To be Installed -> 1. Prettier code formatter
+                                         -> 2. Bracket Pair Colorization Toggler            
+                                         -> ES lint
+                                         -> Better Comments
+    
+
+<<<<<<<<<<------------------- REACT COMPONENT ------------------->>>>>>>>>  
+
+--> Two Types Of Component In React Are :
+                                     1. Class Based Component => OLD way of writing Code (It uses JS classes)
+                                     2. Functional Component  => NEW way of writing Code (It uses JS Functions)
+
+Note : -> Every Component name must start from a Capital letter (Ex-> Heading, Title)   
+       -> A Functional Component is a JS function which return some JSX Element.
+       -> Example : const HeadingComponent = () =>{
+                            return <h1>Hello Boys Astitva Is Here</h1>;
+                        }
+       -> How to Render a Functional Component :
+                   ---> const HeadingComponent = () => (
+        <div id="container">
+          <h1 className="heading">Hello Boys Astitva Is Here To Read Functional Component</h1>;
+        </div>
+)
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<HeadingComponent />);
+
+Note : -> In We can put any JS code in curly braces in functional components or JSX code
+       -> Example : const number = 10000;
+
+const HeadingComponent = () => (
+        <div id="container">
+              <h1>  {number} </h1>
+          <h1 className="heading">Hello Boys Astitva Is Here To Read Functional Component</h1>
+        </div>
+)
+
+
+------> JSX is take care of Injections Attack (JSX eccapes it/ Sanitize the data)
+------> 
+             
 
 
 */
